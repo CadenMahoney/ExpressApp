@@ -18,14 +18,11 @@ connection.connect(function(err){
 
 app.get("/",function(req,res){
   connection.query('SELECT * FROM player', function(err, rows, fields) {
-    connection.end();
     if (!err)
       res.send(rows);
     else
       console.log('Error while performing Query.');
   });
 });
-
-
 
 module.exports = app;
